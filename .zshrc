@@ -71,7 +71,8 @@ ZSH_THEME="random"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git docker docker-compose zsh-autosuggestions zsh-syntax-highlighting)
-eval $(dircolors ~/.dir_colors)
+#eval $(dircolors ~/.dir_colors)
+ZSH_DISABLE_COMPFIX="true"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
