@@ -2,19 +2,19 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
+export ZSH="/home/sneax/.oh-my-zsh"
+LS_COLORS=$LS_COLORS:'tw=00;33:ow=01;33:'; export LS_COLORS
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="random"
-# gallifrey
+#ZSH_THEME="random"
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+#ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" "josh" "pygmalion" "bira" "kiwi" "smt" "fino" "fino-time" "dst" "rkj" "clean" "amuse" "cypher" "sonicradish" "dpoggi" "rgm" "superjarin" "xiong-chiamiov-plus" "jtriley" "peepcode" "ys" "jispwoso" "kphoen" "macovsky-ruby" "bureau" "steeef" "maran" "frisk" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -70,17 +70,17 @@ ZSH_THEME="random"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker docker-compose zsh-autosuggestions zsh-syntax-highlighting)
-#eval $(dircolors ~/.dir_colors)
-ZSH_DISABLE_COMPFIX="true"
+plugins=(git docker docker-compose zsh-syntax-highlighting zsh-autosuggestions sudo)
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
+export PATH="/home/$USER/.pyenv/bin:/home/$USER/.local/bin:$PATH"
+eval "$(pyenv virtualenv-init -)"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=de_DE.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -100,3 +100,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+eval "$(oh-my-posh init zsh --config /home/$USER/.config/oh-my-posh/themes/space.omp.json)"
